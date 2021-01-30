@@ -8,37 +8,39 @@
   <title> Personal Website </title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <!-- adding font awesome script for social icons------------------->
-  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/76d50a7a83.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <!--navigation-section------------------------------------------------->
-  <section>
+  <section id="home">
     <!--navgiation menu--------------------------------------------------->
     <nav>
       <!-- Logo -->
-      <a href="#" class="logo"> Stuart Boyd</a>
+      <a href="#Home" class="logo"> Stuart Boyd</a>
       <!-- Menu -->
       <ul>
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Team</a></li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+      <!-- bars -------------------------------------->
+      <div class="toggle"></div>
     </nav>
     <!--logo-text------------------------------------------------->
     <div class="text-container">
       <p>Hello,</p>
       <p>I'M STUART</p>
       <p>I am a Web Designer & <br>Mechanical Engineer</p>
-      <button class="hire-btn">Hire me</button>
-      <button class="down-cv">Download CV</button>
+      <a href="#contact"><button class="hire-btn">Hire me</button></a>
+      <a href="images/Boyd_Stuart_CV.pdf"><button class="down-cv">Download CV</button></a>
     </div>
     <!--main-image--------------------------------------------------->
     <img src="images/model.png" class="model" alt="Model">
   </section>
   <!--about-section--------------------------------------------------->
-  <div class="about-container">
+  <div class="about-container" id="about">
     <!--img------------------------------------->
     <img src="images/about-img.png" />
     <!--about-text------------------------------------->
@@ -48,12 +50,12 @@
       <p>Hello, my name is Stuart Boyd. I am a Web Developer, Designer and Mechanical Engineer.</p>
       <p>If you have any project for me, please reach out and I will get back to you as soon as possible</p>
       <!--button------------------------------------->
-      <button>Hire me</button>
-      <button>Download CV</button>
+      <a href="#contact"><button>Hire me</button></a>
+      <a href="images/Boyd_Stuart_CV.pdf"><button>Download CV</button></a>
     </div>
   </div>
   <!--services-section--------------------------------------------------->
-  <div class="services">
+  <div class="services" id="services">
     <!--text------------------------------------------>
     <div class="services-text">
       <p>Services</p>
@@ -85,32 +87,59 @@
       </div>
     </div>
   </div>
-  <!--services-section--------------------------------------------------->
-  <div class="contact-me">
-    <p>If you have any projects in mind</p>
-    <button>Contact Me</button>
-  </div>
+
+  <!-- contact-form-container--------------------------------------------->
+  <section id="contact">
+    <!--contact box----------------------------->
+    <div class="contact-box">
+      <div class="c-heading">
+        <h1>Get In Touch</h1>
+        <p>Call or email with any questions or issues</p>
+      </div>
+      <!--inputs---------------->
+      <div class="c-inputs">
+        <form method="POST" action="http://formspree.io/stuy95@hotmail.co.uk">
+          <input type="text" name="name" placeholder="Full Name" />
+          <input type="email" name="email" placeholder="Example@gmail.com" />
+          <textarea name="message" placeholder="Write Message"></textarea>
+          <button type="submit">SEND</button>
+        </form>
+      </div>
+    </div>
+    <!--map----------------------------->
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73968.4081079872!2d-5.996843411127982!3d54.59495914053963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4860fffdd7d08a3b%3A0x2e57162cefc7c531!2sBelfast!5e0!3m2!1sen!2suk!4v1610997385040!5m2!1sen!2suk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+  </section>
   <!--services-section--------------------------------------------------->
   <footer>
     <p>Stuart Boyd Web Development</p>
     <p>Satisfaction Guaranteed</p>
     <!--social------------------------------------------------------------->
       <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="https://twitter.com/StuartABoyd"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/in/stuartaboyd"><i class="fab fa-linkedin"></i></a>
       </div>
     <!--copyright-------------------------->
       <p class="copyright">Copyright by Stuart Boyd Web Development</p>
   </footer>
   <!--social-bar-------------------------->
   <div class="a-social-bar">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="https://twitter.com/StuartABoyd"><i class="fab fa-twitter"></i></a>
+    <a href="https://linkedin.com/in/stuartaboyd"><i class="fab fa-linkedin"></i></a>
   </div>
+
+  <!--JQuery------------------------------------------->
+  <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(".toggle").click(function(){
+        $(".toggle").toggleClass('active')
+        $("nav").toggleClass('active')
+      })
+    })
+
+    </script>
 
 </body>
 
